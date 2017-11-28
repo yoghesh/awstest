@@ -1,0 +1,34 @@
+<div class="container">
+<div class="panel panel-default">
+  <div style="text-align: center" class="panel-heading"><h4><b>
+    {{pageTitle | uppercase}}</b></h4></div>
+  <div class="panel-body">
+    <div class="row" style="padding: 5px; margin: 5px">
+    <div class="col-md-2">Filter By: </div>
+    <input class="col-md-2" type="text" [(ngModel)]='listFilter'/>
+    </div>
+  </div>
+    </div>
+    <div class="table-responsive">
+  <table style="align-self: center" class='table'>
+    <thead class='thead-inverse'>
+      <tr>
+        <th style="text-align: center">Sr.No</th>
+        <th style="text-align: center">Project Name</th>
+        <th style="text-align: center">Presenter</th>
+        <th style="text-align: center">Date</th>
+        <th style="text-align: center">Venue</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor='let project of projectList | projectFilter:listFilter'>
+        <td>New</td>
+        <td>{{project.name}}</td>
+        <td>{{project.presenter}}</td>
+        <td>{{project.date}}</td>
+        <td>{{project.venue}}</td>
+      </tr>
+    </tbody>
+  </table>
+    </div>
+</div>

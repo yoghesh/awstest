@@ -1,0 +1,16 @@
+<app-login-inline></app-login-inline>
+<div class="row">
+    <div class="col-md-12">
+        <app-carousel [interval]="slideInterval" [noWrap]="noLoop">
+            <app-carousel-slide *ngFor="let slidez of slides; let index=index" [active]="slidez.active">
+                <img [src]="slidez.image" style="margin: auto" class="center-block">
+                <div class="carousel-caption">
+                    <h3 style="background-color: transparent; color:white"> Slide {{index+1}}</h3>
+                    <p style="background-color: transparent; color: white">{{slidez.text}}</p>
+                </div>
+            </app-carousel-slide>
+        </app-carousel>
+    </div>
+</div>
+<!--<app-three-drenderer [container]="container"></app-three-drenderer>
+<div #container></div>-->
